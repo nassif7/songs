@@ -1,0 +1,16 @@
+var search = ''
+
+var testCont = [{fName: "nano", lName: "Guilherme"},
+                {fName: "Bamf", lName: "Test iphone"},
+                {fName: "Test", lName: "Test"}]
+
+// var i = "test"
+
+var find = haystack => search.toLowerCase().split(/\s/).reduce((f, c) => f || haystack.toLowerCase().startsWith(c), false)
+
+
+var list = testCont.filter(p => (!search || find(p.fName) || find(p.lName)))
+
+
+
+console.log(list.map(p => p.fName))
